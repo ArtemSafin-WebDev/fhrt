@@ -2,6 +2,9 @@
   display: flex;
   align-items: center;
   margin: 0;
+  @include breakpoint(mobile) {
+    display: none;
+  }
 }
 
 .breadcrumbs__item {

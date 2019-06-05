@@ -9,6 +9,7 @@
   position: relative;
   z-index: 55;
   align-self: flex-start;
+  cursor: pointer;
   &:link,
   &:visited {
     color: $medium-blue;
@@ -16,6 +17,7 @@
   &:hover,
   &:focus {
     color: $light-blue;
+    text-decoration: none;
     > svg {
       transform: translateZ(0) scaleX(1.2);
     }
