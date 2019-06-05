@@ -21,7 +21,7 @@ mix
   .sass("sass/admin_app.scss", "public/css");
 
 mix.browserSync({
-  proxy: "http://fhrtnew.me",
+  proxy: "http://fhrt.test",
   files: ["js/**/*.css", "sass/**/*.scss", "./*.html"]
 });
 

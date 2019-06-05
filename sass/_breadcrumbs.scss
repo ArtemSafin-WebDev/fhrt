@@ -1,0 +1,43 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.breadcrumbs__item {
+  margin-right: 5px;
+  &::after {
+    content: ">";
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: $roboto;
+    line-height: 20px;
+    color: $medium-grey;
+  }
+  &:last-child {
+    margin-right: 0;
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.breadcrumbs__link {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: $roboto;
+  line-height: 20px;
+  color: $medium-grey;
+  &:link,
+  &:visited {
+    color: $medium-grey;
+  }
+
+  &.active {
+    &:link,
+    &:visited {
+      color: $medium-blue;
+    }
+  }
+}
