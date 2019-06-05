@@ -1,0 +1,126 @@
+.main-nav {
+  @include breakpoint(tablet) {
+    display: none;
+  }
+}
+
+
+.main-nav__list {
+  margin: 0;
+  display: flex;
+  &-item {
+    margin-right: 22px;
+    position: relative;
+    &:hover {
+      .main-nav__submenu-list {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.2s;
+      }
+
+      .main-nav__link {
+        > span {
+          &::before {
+            transform: translateZ(0) scaleX(1);
+          }
+        }
+        > svg {
+          transform: translateZ(0) rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+
+.main-nav__list-item--to-be-hidden {
+  @include breakpoint(laptop) {
+    display: none;
+  }
+}
+
+.main-nav__link {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  white-space: nowrap;
+  position: relative;
+  z-index: 55;
+  > span {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.2em;
+      height: 2px;
+      background-color: $red;
+      width: 100%;
+      transition: all 0.3s;
+      transform: translateZ(0) scaleX(0);
+      transform-origin: left center;
+    }
+  }
+
+  > svg {
+    fill: white;
+    margin-bottom: 1px;
+    margin-left: 4px;
+    transition: transform 0.2s;
+  }
+
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    > span {
+      &::before {
+        transform: translateZ(0) scaleX(1);
+      }
+    }
+    > svg {
+      transform: translateZ(0) rotate(180deg);
+    }
+  }
+}
+
+.main-nav__submenu-list {
+  background-color: $medium-blue;
+  color: white;
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  padding: 20px;
+  padding-bottom: 17px;
+  z-index: 50;
+
+  transition: opacity 0.2s, visibility 0s linear 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  &-item {
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.main-nav__submenu-link {
+  color: white;
+  white-space: nowrap;
+  transition: color 0.2s;
+  &:link,
+  &:visited {
+    color: white;
+  }
+  &:hover,
+  &:focus {
+    color: $red;
+  }
+}

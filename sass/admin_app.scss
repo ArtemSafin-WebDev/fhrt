@@ -1,0 +1,38 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Lightcase
+@import "~lightcase/src/scss/lightcase";
+
+@import 'admin/photo_gallery';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+// Fontawesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+
+@import '~select2/src/scss/core.scss';
+@import '~select2-theme-bootstrap4/src/select2-bootstrap.scss';
+
+@import '~jquery-colorbox/example1/colorbox.css';
+
+.pagination {
+  justify-content: center;
+}
+
+// увеличиваем высоту выпадающего списка в select2
+.select2-container--bootstrap .select2-results > .select2-results__options {
+  max-height: 300px;
+}

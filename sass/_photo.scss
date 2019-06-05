@@ -1,0 +1,37 @@
+.photo-card {
+    display: block; // IE11 фикс
+
+    h2 {
+        font-size: 20px;
+        font-weight: normal;
+        margin: 5px 0 20px;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: #929292;
+    }
+
+    a {
+        color: #4a4a4a;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .date {
+        font-size: 13px;
+        color: #8a8a8a;
+        position: absolute;
+        bottom: 0;
+        right: 1.25rem;
+    }
+
+    &:hover {
+        box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.5);
+    }
+
+}

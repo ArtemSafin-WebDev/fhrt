@@ -1,0 +1,183 @@
+.header {
+  background-color: white;
+  max-width: $max-content-width;
+  margin: 0 auto;
+
+  // Логотип ФХРТ в заголовке
+  .logo {
+    margin: 10px;
+    width: 132px;
+
+    @include media-breakpoint-down(lg) {
+      // < 992px
+      width: 105px;
+    }
+    @include media-breakpoint-down(md) {
+      // < 768px
+      width: 90px;
+    }
+    @include media-breakpoint-down(sm) {
+      // < 576px
+      width: 60px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  // Название сайта в заголовке
+  .name {
+    color: #213f88;
+    font-weight: bold;
+    font-size: $font-size-base * 1.8;
+    line-height: 150%;
+
+    @include media-breakpoint-down(lg) {
+      // < 992px
+      font-size: $font-size-base * 1.6;
+    }
+    @include media-breakpoint-down(md) {
+      // < 768px
+      font-size: $font-size-base * 1.6;
+    }
+    @include media-breakpoint-down(sm) {
+      // < 576px
+      font-size: $font-size-base * 1.3;
+    }
+  }
+
+  /* Блок ссылок с логотипами на КХЛ, МХЛ, ФХР... */
+  .link-logos {
+    @include media-breakpoint-down(md) {
+      /* скрываем блок на <=768px */
+      display: none;
+    }
+
+    a {
+      padding: 5px;
+      display: inline-block;
+
+      img {
+        max-width: 100%;
+      }
+
+      @include media-breakpoint-down(lg) {
+        /* уменьшаем размер логотипов <=992px */
+        width: 40px;
+      }
+    }
+  }
+
+  // спонсорский логотип татнефти
+  .tatneft-logo {
+    height: auto;
+    display: none;
+    margin-right: 10px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include media-breakpoint-up(sm) {
+      display: inline-block;
+      width: 150px;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      width: 200px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      display: inline-block;
+      width: 250px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      display: inline-block;
+      width: 300px;
+    }
+  }
+}
+
+.main-menu {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  max-width: $max-content-width;
+  margin: 0 auto;
+
+  #navbar1 ul > li {
+    position: relative;
+    font-weight: 500;
+
+    a {
+      color: #1b4b72;
+    }
+
+    // для горизонтального меню рисуем разделители между пунктами
+    @include media-breakpoint-up(sm) {
+      &:before {
+        // добавляем разделитель | между пунктами меню
+        content: "";
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+        position: absolute;
+        height: 40%;
+        top: 30%;
+        right: 0;
+      }
+      &:last-child:before {
+        // скрываем разделитель у последнего пункта меню
+        border-right: none;
+      }
+    }
+  }
+}
+
+.search-form {
+  width: 280px;
+  display: flex;
+  @media (max-width: 575.98px) {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+}
+
+.search-form__input {
+  -webkit-appearance: none;
+  border: 2px solid #303f9f;
+  padding: 5px 15px;
+  font-size: 16px;
+  line-height: 22px;
+  width: 50%;
+  flex-grow: 1;
+  font: inherit;
+  color: #4a4a4a;
+  outline: none;
+  @include placeholder {
+    color: #4a4a4a;
+  }
+}
+
+.search-form__submit {
+  flex-shrink: 0;
+  width: 34px;
+  border: none;
+  background-color: transparent;
+  background-color: #303f9f;
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > svg {
+      fill: white;
+      width: 16px;
+      height: 16px;
+    }
+    // &::after {
+    //     content: '';
+    // }
+  }
+}

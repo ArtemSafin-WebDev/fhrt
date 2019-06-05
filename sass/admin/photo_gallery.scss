@@ -1,0 +1,29 @@
+.photo-card {
+  width: 300px;
+  height: 225px;
+  background-size: contain;
+  position: relative;
+
+  .photo-edit {
+    display: none;
+  }
+
+  &:hover .photo-edit {
+    display: block;
+  }
+
+  .photo-info {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    overflow-x: hidden;
+    bottom: 0;
+    color: white;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.photo-card.content-visible .photo-edit {
+  display: block;
+}

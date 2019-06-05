@@ -1,0 +1,51 @@
+.coach-card {
+    padding: 10px 10px;
+    border-bottom: 1px solid #dadada;
+
+    img {
+        width: 80px;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    .record{
+        min-height: 100px;
+    }
+
+    .name {
+        padding-left: 100px;
+
+        a {
+            color: #4b4b4b;
+            font-size: 1rem;
+        }
+    }
+}
+
+// Профиль тренера
+.coach-profile {
+
+    .name {
+        font-size: $font-size-base*1.5;
+        font-weight: bold;
+    }
+
+    .info {
+        margin: $font-size-base/2 0;
+    }
+
+    .info span {
+        font-weight: bold;
+    }
+
+    .photo {
+        float: left;
+        margin: 1rem;
+        width: 100%;
+        height: auto;
+        border-radius: 100%;
+        overflow: hidden;
+        max-width: 200px;
+        max-height: 200px;
+    }
+}

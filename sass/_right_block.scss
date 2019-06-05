@@ -1,0 +1,39 @@
+.right-block {
+
+    .section-title {
+        background-color: $title-background;
+        color: $title-color;
+        text-align: center;
+        font-size: $font-size-base*1.2;
+        padding: 5px;
+        font-weight: bold;
+    }
+
+    .last-news {
+        .news-item {
+            padding: 6px;
+            border-bottom: #c8c8c8 1px solid;
+
+            a {
+                color: #3e3e3e;
+            }
+
+            .date {
+                color: #8a8a8a;
+            }
+
+            .title {
+
+            }
+        }
+
+        .all-news {
+            text-align: right;
+            padding: 8px 0;
+
+            a {
+                color: #3e3e3e;
+            }
+        }
+    }
+}

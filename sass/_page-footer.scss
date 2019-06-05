@@ -1,0 +1,505 @@
+.page-footer {
+  background-color: $dark-blue;
+  color: #fff;
+  flex-shrink: 0;
+  padding-top: 30px;
+}
+
+
+.page-footer__federation {
+  display: flex;
+  @include breakpoint(mobile) {
+    flex-direction: column;
+  }
+}
+
+
+.page-footer__federation-info {
+  display: flex;
+  align-items: flex-start;
+  width: 50%;
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+
+.page-footer__federation-logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  @include breakpoint(mobile) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+
+.page-footer__federation-shortname {
+  color: white;
+  font-size: 30px;
+  line-height: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  @include breakpoint(mobile) {
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+  }
+}
+
+
+.page-footer__federation-fullname {
+  font-family: $roboto;
+  font-size: 16px;
+  line-height: 24px;
+  color: $medium-grey;
+  @include breakpoint(mobile) {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+
+.page-footer__name-block {
+  max-width: 400px;
+  @include breakpoint(mobile) {
+    max-width: initial;
+  }
+}
+
+
+.page-footer__sponsor {
+  width: 50%;
+  padding-left: 50px;
+  display: flex;
+  justify-content: flex-end;
+  @include breakpoint(laptop) {
+    justify-content: flex-start;
+  }
+  @include breakpoint(mobile) {
+    width: 100%;
+    padding-left: 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+
+
+.page-footer__sponsor-status {
+  margin: 0;
+  color: $medium-grey;
+  font-family: $roboto;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 300;
+}
+
+
+.page-footer__sponsor-name {
+  margin: 0;
+  font-family: $play;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: .3px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+
+.page-footer__sponsor-hotline {
+  margin: 0;
+  color: $medium-grey;
+  font-family: $roboto;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 300;
+}
+
+
+.page-footer__sponsor-hotline-number {
+  font-family: $roboto;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  &:link,
+  &:visited {
+    color: white;
+  }
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+
+
+.page-footer__bottom-row {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  @include breakpoint(laptop) {
+    flex-direction: column;
+    margin-top: 35px;
+  }
+  
+}
+
+
+
+
+.page-footer__contacts {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding-left: 50px;
+  padding-right: 20px;
+  @include breakpoint(laptop) {
+    width: 100%;
+  }
+  @include breakpoint(mobile) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+.page-footer__nav {
+  width: 75%;
+  display: flex;
+  margin: 0 -20px;
+  @include breakpoint(laptop) {
+    width: 100%;
+    
+    margin-top: 40px;
+    padding-left: 100px;
+  }
+  @include breakpoint(tablet) {
+    flex-wrap: wrap;
+  }
+  @include breakpoint(mobile) {
+    padding-left: 0;
+    margin: 0;
+    flex-direction: column;
+  }
+ 
+}
+
+
+.page-footer__nav-main-list {
+  list-style: none;
+  width: 25%;
+  padding: 0 20px;
+  @include breakpoint(tablet) {
+    width: 50%;
+    margin-bottom: 30px;
+    padding-bottom: 50px;
+  }
+  @include breakpoint(mobile) {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    margin-top: 45px;
+  }
+  &-item {
+    margin-bottom: 18px;
+    @include breakpoint(mobile) {
+      width: 50%;
+      margin: 0 auto;
+      margin-bottom: 18px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.page-footer__nav-main-list-item--show-on-mobile {
+  display: none;
+  @include breakpoint(mobile) {
+    display: block;
+  }
+}
+
+
+.page-footer__dropdown-nav {
+  width: 25%;
+  padding: 0 20px;
+  @include breakpoint(tablet) {
+    width: 50%;
+    margin-bottom: 40px;
+    &:nth-child(3) {
+      margin-top: -65px;
+    }
+  }
+  @include breakpoint(mobile) {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    &:nth-child(3) {
+      margin-top: 0;
+    }
+  }
+}
+
+.page-footer__dropdown-nav-button {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  color: $medium-grey;
+  font-family: $play;
+  cursor: default;
+  outline: none;
+  @include breakpoint(mobile) {
+    color: white;
+  }
+}
+
+.page-footer__dropdown-nav-button-content {
+  position: relative;
+  display: block;
+  // @include breakpoint(mobile) {
+  //   display: none;
+  // }
+}
+
+
+.page-footer__dropdown-nav-list {
+  margin-top: 20px;
+  &-item {
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.page-footer__dropdown-nav-link {
+  color: white;
+  font-family: $roboto;
+  font-size: 16px;
+  line-height: 24px;
+  &:link,
+  &:visited {
+    color: white;
+  }
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+
+.page-footer__nav-link {
+  color: white;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  
+
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+
+.page-footer__contacts-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 50px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include breakpoint(laptop) {
+    align-items: center;
+    margin-bottom: 20px;
+    br {
+      display: none;
+    }
+  }
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    br {
+      display: block;
+    }
+  }
+}
+
+.page-footer__contacts-text {
+  font-family: $roboto;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  a {
+    display: inline;
+    &:link,
+    &:visited {
+      color: white;
+    }
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.page-footer__contacts-icon {
+  fill: $medium-blue;
+  margin-right: 15px;
+  margin-top: 6px;
+  @include breakpoint(laptop) {
+    margin-top: 0;
+  }
+  @include breakpoint(mobile) {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+.page-footer__copyright-and-social {
+  display: flex;
+  @include breakpoint(mobile) {
+    flex-direction: column;
+  }
+}
+
+.page-footer__copyright {
+  width: 66.66%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  color: $dark-blue;
+  font-family: $roboto;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 30px;
+  @include breakpoint(mobile) {
+    width: 100%;
+    justify-content: center;
+    padding: 5px 0;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    background-color: white;
+    color: $medium-blue;
+    z-index: -1;
+    @include breakpoint(mobile) {
+      width: auto;
+      left: -20px;
+      right: -20px;
+      bottom: 0;
+      top: 0;
+    }
+  }
+}
+
+
+.page-footer__social {
+  width: 33.33%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  @include breakpoint(mobile) {
+    width: 100%;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    background-color: $medium-grey;
+    z-index: -1;
+    @include breakpoint(mobile) {
+      width: auto;
+      left: -20px;
+      right: -20px;
+      bottom: 0;
+      top: 0;
+    }
+  }
+}
+
+.page-footer__social-text {
+  color: $dark-blue;
+  font-size: 15px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 20px;
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.page-footer__social-list {
+  display: flex;
+  margin: 0;
+  padding: 8px 0;
+  @include breakpoint(mobile) {
+    justify-content: center;
+    width: 100%;
+    padding: 25px 0;
+  }
+}
+
+.page-footer__social-list-item {
+  margin-right: 20px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.page-footer__social-link {
+  display: block;
+  > svg {
+    fill: $dark-blue;
+    transition: .2s;
+    @include breakpoint(mobile) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &:hover,
+  &:focus {
+    > svg {
+      fill: $red;
+    }
+  }
+}
+
+
+

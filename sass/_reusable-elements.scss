@@ -1,0 +1,54 @@
+.arrow-link {
+  display: flex;
+  align-items: center;
+  color: $medium-blue;
+  font-size: 16px;
+  line-height: 35px;
+  font-family: $play;
+  transition: color .2s;
+  position: relative;
+  z-index: 55;
+  align-self: flex-start;
+  &:link,
+  &:visited {
+    color: $medium-blue;
+  }
+  &:hover,
+  &:focus {
+    color: $light-blue;
+    > svg {
+      transform: translateZ(0) scaleX(1.2);
+    }
+  }
+  > svg {
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    fill: $red;
+    transition: transform .2s ease-out;
+    transform-origin: left center;
+  }
+}
+
+
+.sidebar-card {
+  margin-bottom: 20px;
+  background-color: $light-grey;
+  color: $dark-blue;
+  // &:first-child {
+  //   margin-top: 82px;
+  //   @include breakpoint(mobile) {
+  //     margin-top: 0;
+  //   }
+  // }
+}
+
+
+.announcement {
+  width: 100%;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

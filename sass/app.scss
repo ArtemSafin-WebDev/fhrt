@@ -1,0 +1,53 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+
+// Variables
+@import 'variables';
+@import 'mixins';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import "~lightcase/src/scss/lightcase";
+
+@import "~fotorama/fotorama.css";
+
+@import "~air-datepicker/dist/css/datepicker.css";
+
+@import '~swiper/dist/css/swiper.css';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+@import 'global';
+@import 'layout';
+@import 'page-header';
+@import 'page-footer';
+@import 'president';
+@import 'main-nav';
+@import 'reusable-elements';
+@import 'player';
+@import 'photos-videos';
+@import 'tabs';
+@import 'sponsors-and-partners';
+@import 'competitions';
+@import 'menu';
+
+@import 'header';
+@import 'palace';
+@import 'news';
+@import 'style';
+@import 'right_block';
+@import 'footer';
+@import 'roster';
+@import 'staff';
+@import 'coach';
+@import 'school';
+@import 'photo';
+@import 'video';
+@import 'referee';

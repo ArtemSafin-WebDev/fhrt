@@ -1,0 +1,168 @@
+h2, h3, h4, h5 {
+  color: #484848;
+  margin: 2rem 0 1.5rem;
+}
+
+h1{
+    font-size: 32px;
+    margin: 0.6rem 0 0.8rem;
+    font-weight: 700;
+    color: #303f9f;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+
+
+h6,h5 {
+    font-weight: 700;
+}
+
+p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.page-title {
+  padding: 0;
+  max-width: $max-content-width;
+}
+
+.content-container{
+  max-width: $max-content-width;
+  margin: 0 auto;
+  padding: 0;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+// Профиль игрока
+.player-profile {
+
+  .name {
+    font-size: $font-size-base*1.5;
+    font-weight: bold;
+  }
+
+  .info {
+    margin: $font-size-base/2 0;
+  }
+
+  .info span {
+    font-weight: bold;
+  }
+
+  .photo {
+    float: left;
+    margin: 1rem;
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+    overflow: hidden;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+}
+
+.contacts-info {
+
+  .address:before {
+    background-image: url(/images/placeholder.png);
+    background-size: cover;
+    content: '';
+    width: 55px;
+    height: 55px;
+    display: block;
+    background-repeat: no-repeat;
+    float: initial;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(md) {
+      float: left;
+      margin-right: 35px;
+    }
+  }
+
+  .phone:before {
+    background-image: url(/images/phone-call.png);
+    background-size: cover;
+    content: '';
+    width: 55px;
+    height: 55px;
+    display: block;
+    background-repeat: no-repeat;
+
+    float: initial;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(md) {
+      float: left;
+      margin-right: 35px;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    @include media-breakpoint-up(md) {
+      padding-left: 90px;
+    }
+  }
+
+  .content {
+    color: #a8a8a8;
+
+    span {
+      color: black;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-left: 90px;
+    }
+  }
+}
+
+#contactsMap {
+  height: 400px;
+}
+
+.palace-info {
+
+  > div {
+    border-bottom: 1px solid #e7e7e7;
+    padding: 10px;
+  }
+
+  .title {
+    color: #777777;
+  }
+
+  .content {
+    font-weight: bold;
+    font-size: $font-size-base*1.1;
+  }
+}
+
+.pagination {
+  justify-content: center;
+}

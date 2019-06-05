@@ -1,0 +1,13 @@
+.school-card a{
+    color: black;
+    text-decoration: none;
+}
+
+.school-card a:hover .card{
+    box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.5);
+}
+
+// hack для IE
+.school-card {
+    display: block;
+}

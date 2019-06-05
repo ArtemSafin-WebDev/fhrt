@@ -1,0 +1,125 @@
+.photos-videos {
+  margin-top: 32px;
+  position: relative;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    right: 80px;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    background-color: $light-grey;
+    border-top: 5px solid $medium-blue;
+    z-index: -1;
+    @include breakpoint(mobile) {
+      right: -20px;
+      width: auto;
+      left: -20px;
+    }
+  }
+
+  .swiper-container {
+    width: calc(100% + 20px);
+    padding: 0 10px;
+    margin-left: -10px;
+  }
+
+  .swiper-slide {
+    width: 33.33%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+  }
+}
+
+.photos-videos__content {
+  margin-top: -10px;
+}
+
+.photos-videos__slider-block {
+  position: relative;
+}
+
+.photos-videos__slider-controls {
+  position: absolute;
+  top: 100%;
+  margin-top: -20px;
+  left: 66.66%;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  z-index: 40;
+  @include breakpoint(laptop) {
+    left: 50%;
+  }
+  @include breakpoint(mobile) {
+    left: auto;
+    right: 0;
+  }
+}
+
+.photos-videos__slider-button {
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: .2s;
+  svg {
+    fill: $red;
+    width: 30px;
+    height: 20px;
+    transition: .2s;
+    vertical-align: top;
+  }
+  &.swiper-button-disabled {
+    cursor: default;
+    svg {
+      fill: #E57E98;
+    }
+    &:hover {
+      transform: translateZ(0) scaleX(1);
+    }
+  }
+ 
+}
+
+
+.photos-videos__slider-button--prev {
+  transform-origin: right center;
+  &:hover {
+    transform: translateZ(0) scaleX(1.2);
+  }
+} 
+.photos-videos__slider-button--next {
+  transform-origin: left center;
+  &:hover {
+    transform: translateZ(0) scaleX(1.2);
+  }
+} 
+
+.photos-videos__slider-button-content {
+  position: relative;
+  display: block;
+}
+
+
+.photos-videos__play-icon {
+  fill: white;
+  fill-opacity: .7;
+  transition: fill-opacity .2s;
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  left: 50%;
+  top: 50%;
+  margin-left: -29px;
+  margin-top: -29px;
+}
+
+
+.photos-videos__arrow-link {
+  margin-top: -25px;
+}
