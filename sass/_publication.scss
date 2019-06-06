@@ -100,10 +100,90 @@
   }
 
 
-  .fullscreen-image {
-    margin: 0 -26.9%;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    th {
+      background-color: $medium-blue;
+      color: white;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 10px 20px;
+      font-weight: 400;
+      @include breakpoint(mobile) {
+        white-space: nowrap;
+      }
+    }
+
+
+    td {
+      font-size: 16px;
+      line-height: 24px;
+      padding: 15px 20px;
+      font-weight: 400;
+      font-family: $roboto;
+      @include breakpoint(mobile) {
+        white-space: nowrap;
+      }
+    }
+
+    tr {
+      &:nth-child(even) {
+        td {
+          background-color: $light-grey;
+        }
+      }
+    }
+  }
+
+
+
+  .table-gradient {
+    position: relative;
+    width: 100%;
+
+    &::after {
+      content: '';
+      width: 60px;
+      bottom: 0;
+      right: -20px;
+      top: 44px;
+      position: absolute;
+      background-image: linear-gradient(to left, white,
+      rgba(white, 0));
+      display: none;
+      transition: opacity .2s;
+      @include breakpoint(mobile) {
+        display: block;
+      }
+    }
+  }
+
+
+  .no-gradient {
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    @include breakpoint(mobile) {
+      width: 100vw;
+      margin-left: -20px;
+    }
+  }
+
+
+  
+
+
+  .fullscreen-block {
+    margin: 30px -26.9%;
     @include breakpoint(laptop) {
-      margin: 0;
+      margin: 30px 0;
     }
   }
 

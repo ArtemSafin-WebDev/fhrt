@@ -13,10 +13,7 @@ require("air-datepicker/src/js/air-datepicker");
 import objectFitImages from "object-fit-images";
 import Swiper from "swiper/dist/js/swiper.js";
 import setTabsOnPage from "./tabs";
-import {
-  disableBodyScroll,
-  clearAllBodyScrollLocks
-} from "body-scroll-lock";
+import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import detectIt from "detect-it";
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -49,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       navigation: {
         nextEl: swiperNext,
         prevEl: swiperPrev
-      },
+      }
     });
   });
 
@@ -286,4 +283,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     }
   }
+
+  // Скрытие градиентов у таблиц при полной прокрутке
+
+  const tableGradients = Array.from(
+    document.querySelectorAll(".table-gradient")
+  );
+
+  tableGradients.forEach(gradient => {
+    const wrapper = gradient.querySelector(".table-wrapper");
+
+    // let elementWidth = wrapper.offsetWidth;
+
+    wrapper.addEventListener("scroll", function() {
+      console.log(this.scrollLeft)
+      console.log(this.scrollWidth - this.offsetWidth)
+      if (this.scrollLeft === (this.scrollWidth - this.offsetWidth)) {
+        gradient.classList.add("no-gradient");
+      } else {
+        gradient.classList.remove("no-gradient");
+      }
+    });
+
+    // window.addEventListener("resize", function() {
+    //   elementWidth = wrapper.offsetWidth;
+    //   console.log(`Wrapper width after resize ${elementWidth}`);
+    // });
+  });
 });
