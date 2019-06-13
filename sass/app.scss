@@ -19,6 +19,9 @@
 
 @import '~swiper/dist/css/swiper.css';
 
+
+@import '~simplebar/dist/simplebar.css';
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -26,6 +29,7 @@
 
 @import 'global';
 @import 'layout';
+@import 'simplebar-custom';
 @import 'page-header';
 @import 'page-footer';
 @import 'president';
@@ -54,3 +58,6 @@
 @import 'breadcrumbs';
 @import 'publication';
 @import 'last-news';
+@import 'tournament-navigation';
+@import 'final';
+@import 'groups';

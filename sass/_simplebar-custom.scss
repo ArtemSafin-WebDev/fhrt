@@ -1,0 +1,29 @@
+.simplebar-track.simplebar-horizontal {
+  height: 15px;
+  background-color: #fff;
+}
+
+
+.simplebar-track {
+  z-index: 100;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  top: 0;
+  height: 15px;
+}
+
+.simplebar-track .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+
+.simplebar-scrollbar:before {
+  background-color: $medium-grey;
+  border-radius: 0;
+}
+
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+  left: 0;
+  right: 0;
+}

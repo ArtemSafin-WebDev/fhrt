@@ -15,6 +15,7 @@ import Swiper from "swiper/dist/js/swiper.js";
 import setTabsOnPage from "./tabs";
 import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import detectIt from "detect-it";
+import SimpleBar from "simplebar";
 
 document.addEventListener("DOMContentLoaded", function(event) {
   // Полифилл для свойства object-fit
@@ -296,18 +297,54 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // let elementWidth = wrapper.offsetWidth;
 
     wrapper.addEventListener("scroll", function() {
-      console.log(this.scrollLeft)
-      console.log(this.scrollWidth - this.offsetWidth)
-      if (this.scrollLeft === (this.scrollWidth - this.offsetWidth)) {
+      console.log(this.scrollLeft);
+      console.log(this.scrollWidth - this.offsetWidth);
+      if (this.scrollLeft === this.scrollWidth - this.offsetWidth) {
         gradient.classList.add("no-gradient");
       } else {
         gradient.classList.remove("no-gradient");
       }
     });
+  });
 
-    // window.addEventListener("resize", function() {
-    //   elementWidth = wrapper.offsetWidth;
-    //   console.log(`Wrapper width after resize ${elementWidth}`);
-    // });
+  // Таблицы с кастомным скроллбаром
+
+  const scrollableTables = Array.from(
+    document.querySelectorAll(".js-scroll-table-wrapper")
+  );
+
+  scrollableTables.forEach(table => {
+    const tableOverflowContainer = table.querySelector(
+      ".groups__table-wrapper"
+    );
+    if (tableOverflowContainer) {
+      const SBInstance = new SimpleBar(tableOverflowContainer, {
+        autoHide: false
+      });
+
+      const scrollElement = SBInstance.getScrollElement();
+
+      if (scrollElement.scrollWidth > scrollElement.clientWidth) {
+        table.classList.add("right-gradient");
+      }
+
+      scrollElement.addEventListener("scroll", function(event) {
+        const scrolled = this.scrollLeft + this.clientWidth;
+        const scrollWidth = this.scrollWidth;
+        console.log(`Scrolled ${scrolled}, scroll width ${scrollWidth}`);
+        if (scrolled >= scrollWidth) {
+          table.classList.remove("right-gradient");
+          return;
+        }
+        if (scrolled < scrollWidth && this.scrollLeft > 0) {
+          table.classList.add("right-gradient");
+          table.classList.add("left-gradient");
+          return;
+        }
+        if (this.scrollLeft === 0) {
+          table.classList.remove("left-gradient");
+        }
+      });
+    }
   });
 });

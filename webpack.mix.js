@@ -1,6 +1,5 @@
 let mix = require("laravel-mix");
 
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -18,7 +17,10 @@ mix
   .js("js/app.js", "public/js")
   .js("js/admin_app.js", "public/js")
   .sass("sass/app.scss", "public/css")
-  .sass("sass/admin_app.scss", "public/css");
+  .sass("sass/admin_app.scss", "public/css")
+  .options({
+    processCssUrls: false
+  });
 
 mix.browserSync({
   proxy: "http://fhrt.test",

@@ -1,0 +1,132 @@
+.final__matches {
+  margin: 0;
+}
+
+
+.final__matches-card {
+  background-color: $light-grey;
+}
+
+
+.final__heading {
+  color: $dark-blue;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: -44px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+}
+
+.final__matches-item {
+  margin-bottom: 5px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.final__matches-card {
+  background-color: $light-grey;
+  padding: 15px;
+  display: flex;
+}
+
+
+.final__matches-card-date {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  color: $medium-grey;
+  font-family: $roboto;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+
+.final__matches-card-match-type {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+  color: $medium-blue;
+}
+
+.final__matches-card-left-column {
+  width: 25%;
+  padding-right: 20px;
+}
+
+.final__matches-card-right-column {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &--overtime {
+    &::before {
+      content: 'ОТ';
+      color: white;
+      font-size: 10px;
+      line-height: 14px;
+      font-family: $roboto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      left: -1px;
+      width: 20px;
+      height: 20px;
+      background-color: $medium-blue;
+      border-radius: 50%;
+      margin-top: -10px;
+    }
+  }
+}
+
+
+
+.final__matches-card-team-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+.final__matches-card-team-score {
+  font-size: 30px;
+  line-height: 35px;
+  color: $red;
+  font-weight: 700;
+  margin: 0;
+  margin-right: 10px;
+}
+
+
+.final__matches-card-team-info {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.final__matches-card-team-name {
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+.final__matches-card-team-city {
+  font-size: 14px;
+  line-height: 17px;
+  color: $medium-grey;
+  font-family: $roboto;
+  margin: 0;
+}

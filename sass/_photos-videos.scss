@@ -34,6 +34,71 @@
     flex-direction: column;
     margin: 30px 0;
   }
+
+  .tabs__divider {
+    margin: 0 15px;
+    margin-top: 7px;
+    > svg {
+      fill: $medium-blue;
+      @include breakpoint(mobile) {
+        width: 10px;
+        height: 14px;
+      }
+    }
+  }
+
+  .tabs__navigation {
+    > button {
+      font-family: $play;
+      font-size: 30px;
+      line-height: 35px;
+      color: $medium-blue;
+      font-weight: 400;
+      outline: none;
+      position: relative;
+      @include breakpoint(mobile) {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $red;
+        transition: transform 0.2s;
+        transform-origin: left center;
+        transform: translateZ(0) scaleX(0);
+      }
+
+      &:hover,
+      &:focus {
+        &::before {
+          transform: translateZ(0) scaleX(1);
+        }
+      }
+      > * {
+        position: relative;
+      }
+
+      &.active {
+        font-weight: 700;
+        &:hover,
+        &:focus {
+          &::before {
+            transform: translateZ(0) scaleX(0);
+          }
+        }
+      }
+
+      &[disabled] {
+        color: $light-blue;
+        cursor: default;
+      }
+    }
+  }
 }
 
 .photos-videos__content {
@@ -66,50 +131,47 @@
   outline: none;
   background-color: transparent;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
   svg {
     fill: $red;
     width: 30px;
     height: 20px;
-    transition: .2s;
+    transition: 0.2s;
     vertical-align: top;
   }
   &.swiper-button-disabled {
     cursor: default;
     svg {
-      fill: #E57E98;
+      fill: #e57e98;
     }
     &:hover {
       transform: translateZ(0) scaleX(1);
     }
   }
- 
 }
-
 
 .photos-videos__slider-button--prev {
   transform-origin: right center;
   &:hover {
     transform: translateZ(0) scaleX(1.2);
   }
-} 
+}
 .photos-videos__slider-button--next {
   transform-origin: left center;
   &:hover {
     transform: translateZ(0) scaleX(1.2);
   }
-} 
+}
 
 .photos-videos__slider-button-content {
   position: relative;
   display: block;
 }
 
-
 .photos-videos__play-icon {
   fill: white;
-  fill-opacity: .7;
-  transition: fill-opacity .2s;
+  fill-opacity: 0.7;
+  transition: fill-opacity 0.2s;
   position: absolute;
   width: 58px;
   height: 58px;
@@ -118,7 +180,6 @@
   margin-left: -29px;
   margin-top: -29px;
 }
-
 
 .photos-videos__arrow-link {
   margin-top: -25px;
