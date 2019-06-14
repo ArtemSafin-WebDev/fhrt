@@ -16,6 +16,7 @@ import setTabsOnPage from "./tabs";
 import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import detectIt from "detect-it";
 import SimpleBar from "simplebar";
+import Choices from "choices.js";
 
 document.addEventListener("DOMContentLoaded", function(event) {
   // Полифилл для свойства object-fit
@@ -315,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   scrollableTables.forEach(table => {
     const tableOverflowContainer = table.querySelector(
-      ".groups__table-wrapper"
+      ".js-scroll-table-overflow-container"
     );
     if (tableOverflowContainer) {
       const SBInstance = new SimpleBar(tableOverflowContainer, {
@@ -323,10 +324,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
       });
 
       const scrollElement = SBInstance.getScrollElement();
-
-      if (scrollElement.scrollWidth > scrollElement.clientWidth) {
-        table.classList.add("right-gradient");
+      const checkOverflow = () => {
+        if (scrollElement.scrollWidth > scrollElement.clientWidth) {
+          table.classList.add("right-gradient");
+        }
       }
+
+      checkOverflow()
+
+      window.addEventListener('resize', checkOverflow)
 
       scrollElement.addEventListener("scroll", function(event) {
         const scrolled = this.scrollLeft + this.clientWidth;
@@ -347,4 +353,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
       });
     }
   });
+
+  // Кастомный селект
+
+  const customSelects = Array.from(document.querySelectorAll('.js-custom-select'))
+
+  customSelects.forEach(select => {
+    new Choices(select, {
+      searchEnabled: false,
+      itemSelectText: '',
+    });
+  })
+
 });

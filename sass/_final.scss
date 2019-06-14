@@ -1,5 +1,8 @@
 .final__matches {
   margin: 0;
+  @include breakpoint(mobile) {
+    margin: 0 -20px;
+  }
 }
 
 
@@ -18,6 +21,11 @@
   margin-top: -44px;
   margin-bottom: 20px;
   padding-left: 15px;
+  padding-right: 15px;
+  @include breakpoint(mobile) {
+    margin-top: 0;
+    text-align: center;
+  }
 }
 
 .final__matches-item {
@@ -31,6 +39,12 @@
   background-color: $light-grey;
   padding: 15px;
   display: flex;
+  @include breakpoint(mobile) {
+    padding: 15px 20px;
+  }
+  @include breakpoint(small-mobile) {
+    flex-direction: column;
+  }
 }
 
 
@@ -56,6 +70,12 @@
 .final__matches-card-left-column {
   width: 25%;
   padding-right: 20px;
+  @include breakpoint(mobile) {
+    width: 110px;
+  }
+  @include breakpoint(small-mobile) {
+    width: 100%;
+  }
 }
 
 .final__matches-card-right-column {
@@ -63,6 +83,14 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  @include breakpoint(mobile) {
+    width: 50%;
+    flex-grow: 1;
+  }
+  @include breakpoint(small-mobile) {
+    width: 100%;
+    margin-top: 15px;
+  }
   &--overtime {
     &::before {
       content: 'ОТ';
@@ -120,6 +148,7 @@
   line-height: 24px;
   font-weight: 700;
   margin: 0;
+  white-space: nowrap;
 }
 
 
@@ -129,4 +158,5 @@
   color: $medium-grey;
   font-family: $roboto;
   margin: 0;
+  white-space: nowrap;
 }

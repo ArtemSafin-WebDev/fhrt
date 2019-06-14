@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "body-scroll-lock": "^2.6.1",
+    "choices.js": "^7.0.0",
     "detect-it": "^3.0.5",
     "object-fit-images": "^3.2.4",
     "simplebar": "^4.0.0",

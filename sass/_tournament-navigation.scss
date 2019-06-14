@@ -2,17 +2,28 @@
   display: flex;
   align-items: center;
   margin-top: 35px;
-  margin-bottom: 84px;
+  margin-bottom: 49px;
+  padding-bottom: 30px;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-bottom: 0;
+    margin: 20px 0;
+  }
 }
 
 .tournament-navigation__item {
   margin: 0 15px;
-  &:first-child {
-    margin-left: 0;
-  }
-  &:last-child {
-    margin-right: 0;
-  }
+  margin-bottom: 15px;
+  // &:first-child {
+  //   margin-left: 0;
+  // }
+  // &:last-child {
+  //   margin-right: 0;
+  // }
 }
 
 .tournament-navigation__link {
@@ -22,6 +33,7 @@
   line-height: 24px;
   font-weight: 700;
   outline: none;
+  white-space: nowrap;
   > span {
     position: relative;
     &::before {

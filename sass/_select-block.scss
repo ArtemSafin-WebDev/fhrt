@@ -1,0 +1,127 @@
+.select-block {
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -50px;
+  @include breakpoint(mobile) {
+    margin-top: 0;
+  }
+}
+
+.select-block__select {
+  width: 380px;
+  @include breakpoint(mobile) {
+    width: 100%;
+  }
+}
+
+.choices__inner {
+  border: 1px solid $medium-blue;
+  background-color: transparent;
+  border-radius: 0;
+  font-size: 16px;
+  line-height: 20px;
+  color: $medium-blue;
+  padding: 3px 15px;
+  padding-right: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.is-open .choices__inner {
+  border-radius: 0;
+}
+
+.is-focused .choices__inner,
+.is-open .choices__inner {
+  border-color: $medium-blue;
+}
+
+.choices[data-type*="select-one"] .choices__inner {
+  padding-bottom: 3px;
+}
+
+.choices__list--single {
+  padding: 0;
+}
+
+.choices[data-type*="select-one"]::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 45px;
+  height: 100%;
+  background-color: $medium-blue;
+}
+
+.choices[data-type*="select-one"]::after {
+  border: none;
+  margin: 0;
+  right: 0;
+  background-image: url("data:image/svg+xml,%0A%3Csvg fill='white' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6.71 4.06'%3E%3Cpath class='cls-1' d='M6 0L3.35 2.65.71 0 0 .71l3.35 3.35L6.71.71 6 0z'/%3E%3C/svg%3E");
+  background-position: center;
+  background-size: 12px auto;
+  background-repeat: no-repeat;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  transition: all 0.2s;
+}
+
+.choices[data-type*="select-one"].is-open::after {
+  margin: 0;
+  transform: rotate(180deg);
+}
+
+.choices__list--dropdown {
+  word-break: initial;
+  border-radius: 0;
+  border: 1px solid $medium-blue;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.is-open .choices__list--dropdown {
+  border-color: $medium-blue;
+}
+
+.choices__list--dropdown .choices__item {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: $roboto;
+  padding: 10px 15px;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background-color: transparent;
+  color: $medium-grey;
+  // &:hover {
+  //   background-color: transparent;
+  //   color: $medium-grey;
+  // }
+}
+
+.choices__list--dropdown .choices__item--selectable {
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $light-grey;
+    color: $red;
+  }
+}
+
+
+
+
+.select-block__arrow-link {
+  align-self: center;
+  white-space: nowrap;
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}

@@ -1,8 +1,5 @@
-.groups {
-  margin-top: 60px;
-  @include breakpoint(mobile) {
-    margin-top: 30px;
-  }
+.calendar {
+  margin-top: -40px;
   .tabs__navigation {
     @include breakpoint(mobile) {
       margin: 0 -20px;
@@ -17,6 +14,7 @@
       border: 1px solid $medium-blue;
       transition: 0.2s;
       white-space: nowrap;
+      width: 150px;
       @include breakpoint(mobile) {
         width: 40%;
         flex-grow: 1;
@@ -58,22 +56,7 @@
   }
 }
 
-.groups__heading {
-  color: $dark-blue;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 24px;
-  text-transform: uppercase;
-  margin: 0;
-  margin-bottom: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
-  @include breakpoint(mobile) {
-    text-align: center;
-  }
-}
-
-.groups__table-gradient-wrapper {
+.calendar__table-gradient-wrapper {
   position: relative;
   border-bottom: 4px solid $medium-blue;
   @include breakpoint(mobile) {
@@ -115,7 +98,7 @@
   }
 }
 
-.groups__table-wrapper {
+.calendar__table-wrapper {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -123,6 +106,8 @@
   table {
     width: 100%;
     border-collapse: collapse;
+    text-align: left;
+    vertical-align: top;
     thead {
       th {
         background-color: $medium-blue;
@@ -131,15 +116,9 @@
         line-height: 24px;
         padding: 10px 20px;
         font-weight: 400;
-        text-align: center;
-        vertical-align: center;
+        text-align: left;
+        vertical-align: top;
         white-space: nowrap;
-        &:nth-child(1) {
-          text-align: left;
-        }
-        &:nth-child(2) {
-          text-align: left;
-        }
       }
     }
 
@@ -150,20 +129,17 @@
         padding: 15px 20px;
         font-weight: 400;
         font-family: $roboto;
-        text-align: center;
-        vertical-align: center;
+        text-align: left;
+        
         white-space: nowrap;
         &:nth-child(1) {
-          vertical-align: top;
-          text-align: left;
           color: $medium-grey;
-          font-size: 16px;
-          line-height: 24px;
-          font-family: $roboto;
         }
         &:nth-child(2) {
-          vertical-align: top;
-          text-align: left;
+          color: $medium-grey;
+        }
+        &:nth-child(3) {
+          color: $medium-grey;
         }
       }
 
@@ -174,64 +150,21 @@
           }
         }
       }
+    }
 
-      .team-name {
-        font-size: 17px;
-        line-height: 24px;
-        font-weight: 700;
-        font-family: $play;
-        display: block;
-      }
+    .team-name {
+      font-size: 17px;
+      line-height: 24px;
+      font-weight: 700;
+      font-family: $play;
+      display: block;
+    }
 
-      .team-city {
-        color: $medium-grey;
-        font-weight: 300;
-        font-family: $roboto;
-        display: block;
-      }
-
-      .top-score,
-      .bottom-score {
-        display: block;
-      }
-
-      .puck {
-        width: 30px;
-        height: 30px;
-        display: block;
-        margin: 0 auto;
-        background-image: url("../../images/logo_fhrt.png");
-        background-position: center;
-        background-size: 100% auto;
-        background-repeat: no-repeat;
-      }
+    .team-city {
+      color: $medium-grey;
+      font-weight: 300;
+      font-family: $roboto;
+      display: block;
     }
   }
-}
-
-
-
-
-
-.groups__legend {
-  display: flex;
-  flex-wrap: wrap;
-  width: 70%;
-  margin: 0;
-  margin-top: 30px;
-  margin-bottom: 60px;
-  @include breakpoint(tablet) {
-    width: 100%;
-  }
-  @include breakpoint(mobile) {
-    flex-direction: column;
-  }
-  .abbreviation {
-    font-weight: 700;
-  }
-}
-
-
-.groups__legend-item {
-  width: 50%;
 }
