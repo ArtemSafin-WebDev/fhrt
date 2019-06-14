@@ -1,6 +1,7 @@
 .last-news {
   background-color: $light-grey;
   padding: 25px 15px;
+  margin-bottom: 40px;
   @include breakpoint(mobile) {
     margin: 0 -20px;
     padding: 25px 20px;

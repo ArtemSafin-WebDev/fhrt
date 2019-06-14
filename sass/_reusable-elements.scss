@@ -55,3 +55,34 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.show-more-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.show-more {
+  color: white;
+  background-color: $medium-blue;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 10px 35px;
+  transition: .2s;
+  @include breakpoint(mobile) {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  &:link,
+  &:visited {
+    color: white;
+  }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: $light-blue;
+  }
+}

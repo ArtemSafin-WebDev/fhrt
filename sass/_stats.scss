@@ -1,0 +1,205 @@
+.stats {
+  margin-top: -40px;
+  @include breakpoint(mobile) {
+    margin-top: 20px;
+  }
+  .tabs__navigation {
+    @include breakpoint(mobile) {
+      margin: 0 -20px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    > button {
+      font-size: 16px;
+      line-height: 20px;
+      padding: 9px 17px;
+      color: $medium-blue;
+      border: 1px solid $medium-blue;
+      transition: 0.2s;
+      white-space: nowrap;
+      width: 150px;
+      @include breakpoint(mobile) {
+        width: 40%;
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+      @include breakpoint(small-mobile) {
+        width: 40%;
+      }
+      + button {
+        margin-left: -1.5px;
+      }
+      &:hover,
+      &:focus {
+        background-color: $light-blue;
+        color: white;
+        border-color: $light-blue;
+      }
+      > * {
+        position: relative;
+      }
+
+      &.active {
+        background-color: $medium-blue;
+        color: white;
+        border-color: $medium-blue;
+        &:hover,
+        &:focus {
+          background-color: $medium-blue;
+          color: white;
+          border-color: $medium-blue;
+        }
+      }
+
+      &[disabled] {
+        background-color: $medium-grey;
+        color: white;
+      }
+    }
+  }
+}
+
+.stats__table-gradient-wrapper {
+  position: relative;
+  border-bottom: 4px solid $medium-blue;
+  @include breakpoint(mobile) {
+    margin: 0 -20px;
+  }
+  &::before {
+    content: "";
+    width: 60px;
+    position: absolute;
+    background-image: linear-gradient(to right, white, rgba(white, 0));
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: 10;
+  }
+  &::after {
+    content: "";
+    width: 60px;
+    position: absolute;
+    background-image: linear-gradient(to left, white, rgba(white, 0));
+    top: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: 10;
+  }
+  &.left-gradient {
+    &::before {
+      opacity: 1;
+    }
+  }
+  &.right-gradient {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.stats__table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 15px;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    vertical-align: top;
+    thead {
+      th {
+        background-color: $medium-blue;
+        color: white;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 10px 20px;
+        font-weight: 400;
+        text-align: left;
+        vertical-align: top;
+        white-space: nowrap;
+      }
+    }
+
+    tbody {
+      td {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 15px 20px;
+        font-weight: 400;
+        font-family: $roboto;
+        text-align: left;
+
+        white-space: nowrap;
+        &:nth-child(1) {
+          color: $medium-grey;
+        }
+      }
+
+      tr {
+        &:nth-child(even) {
+          td {
+            background-color: $light-grey;
+          }
+        }
+      }
+    }
+
+    .team-name {
+      font-size: 14px;
+      line-height: 21px;
+      font-family: $roboto;
+      display: block;
+    }
+
+    .team-city {
+      color: $medium-grey;
+      font-size: 14px;
+      line-height: 21px;
+      font-family: $roboto;
+      display: block;
+    }
+
+    .player-info {
+      display: flex;
+      align-items: center;
+      .player-image-container {
+        width: 50px;
+        height: 50px;
+        display: block;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+        flex-shrink: 0;
+        .player-image {
+          width: 100%;
+          height: 100%;
+          @include objectFitCover();
+        }
+      }
+
+      .player-name {
+        display: flex;
+        flex-direction: column;
+        .player-first-name {
+          font-size: 17px;
+          line-height: 24px;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin: 0;
+        }
+
+        .player-last-name {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
