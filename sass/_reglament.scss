@@ -1,0 +1,151 @@
+
+
+.reglament__heading {
+  color: $dark-blue;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: -44px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  @include breakpoint(mobile) {
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+
+.reglament__stage {
+  background-color: $light-grey;
+  display: flex;
+  padding: 15px;
+  margin-bottom: 5px;
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    margin: 0 -20px;
+    margin-bottom: 5px;
+  }
+}
+
+
+
+.reglament__stage-number {
+  font-size: 17px;
+  height: 24px;
+  font-weight: 700;
+  width: 85px;
+  padding-right: 20px;
+  color: $medium-blue;
+  flex-shrink: 0;
+}
+
+
+.reglament__stage-text {
+  font-family: $roboto;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+
+
+.reglament__content {
+  padding-left: 95px;
+  padding-right: 15%;
+  @include breakpoint(mobile) {
+    padding: 0;
+  }
+  p {
+    margin: 0;
+    font-family: $roboto;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 20px 0;
+  }
+
+
+  a {
+    color: $medium-blue;
+    &:link,
+    &:visited {
+      color: $medium-blue;
+    }
+  }
+
+
+  .reglament__download-link {
+    font-family: $play;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 10px;
+      margin-left: -45px;
+      flex-shrink: 0;
+      @include breakpoint(mobile) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+
+
+
+.reglament__remark {
+  padding: 15px;
+  background-color: $light-grey;
+  display: flex;
+  margin-bottom: 60px;
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    margin: 0 -20px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+  }
+}
+
+
+.reglament__remark-title {
+  margin: 0;
+  width: 130px;
+  margin-right: 40px;
+  flex-shrink: 0;
+  color: $medium-blue;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+  @include breakpoint(mobile) {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+.reglament__remark-content {
+  padding-right: 15%;
+  p {
+    margin: 0;
+    font-family: $roboto;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
+  a {
+    color: $medium-blue;
+    &:link,
+    &:visited {
+      color: $medium-blue;
+    }
+  }
+}
