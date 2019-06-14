@@ -327,6 +327,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       const checkOverflow = () => {
         if (scrollElement.scrollWidth > scrollElement.clientWidth) {
           table.classList.add("right-gradient");
+        } else {
+          table.classList.remove("right-gradient");
         }
       }
 
