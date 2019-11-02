@@ -32,7 +32,7 @@
     "leaflet-fullscreen": "^1.0.2",
     "leaflet-gesture-handling": "^1.1.8",
     "lightcase": "^2.5.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "pc-bootstrap4-datetimepicker": "^4.17.50",
     "popper.js": "^1.15.0",
     "resolve-url-loader": "^2.3.2",
